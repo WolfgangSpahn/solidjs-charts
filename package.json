@@ -1,12 +1,21 @@
 {
-  "name": "solidjs-charts",
+  "name": "@wolfgangspahn/solidjs-charts",
   "version": "1.0.0",
-  "description": "SolidJS component wrapper for Chart.js",
+  "description": "A reactive SolidJS component wrapper for Chart.js with TypeScript support. Create beautiful, interactive charts with line, bar, pie, doughnut, scatter, bubble, and radar chart types.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "vite build",
@@ -17,17 +26,37 @@
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --write src/**/*.{ts,tsx}",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run test:run && npm run build",
+    "prepack": "npm run build"
   },
   "keywords": [
     "solidjs",
     "charts",
     "chart.js",
+    "chartjs",
     "data-visualization",
-    "typescript"
+    "typescript",
+    "reactive",
+    "components",
+    "line-chart",
+    "bar-chart",
+    "pie-chart",
+    "scatter-plot",
+    "bubble-chart",
+    "radar-chart",
+    "doughnut-chart"
   ],
-  "author": "",
+  "author": "Wolfgang Spahn <wolfgang.spahn@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wolfgangspahn/solidjs-charts.git"
+  },
+  "homepage": "https://github.com/wolfgangspahn/solidjs-charts#readme",
+  "bugs": {
+    "url": "https://github.com/wolfgangspahn/solidjs-charts/issues"
+  },
   "peerDependencies": {
     "chart.js": "^4.0.0",
     "solid-js": "^1.8.0"
@@ -47,6 +76,7 @@
     "solid-js": "^1.8.5",
     "typescript": "^5.0.0",
     "vite": "^5.0.0",
+    "vite-plugin-dts": "^4.5.4",
     "vite-plugin-solid": "^2.8.0",
     "vitest": "^1.0.0"
   }

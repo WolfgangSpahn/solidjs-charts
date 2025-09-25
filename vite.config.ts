@@ -1,8 +1,15 @@
 import { defineConfig } from 'vite';
 import solid from 'vite-plugin-solid';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-  plugins: [solid()],
+  plugins: [
+    solid(), 
+    dts({
+      insertTypesEntry: true,
+      exclude: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'tests/**/*']
+    })
+  ],
   build: {
     lib: {
       entry: 'src/index.ts',
@@ -17,9 +24,7 @@ export default defineConfig({
           'chart.js': 'Chart'
         }
       }
-    }
-  },
-  test: {
-    environment: 'jsdom'
+    },
+    emptyOutDir: true
   }
 });
