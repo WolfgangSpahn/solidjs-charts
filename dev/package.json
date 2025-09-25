@@ -1,0 +1,21 @@
+{
+  "name": "solidjs-charts-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo application for SolidJS Charts component",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.8.0",
+    "chart.js": "^4.4.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-solid": "^2.8.0",
+    "typescript": "^5.2.0"
+  },
+  "type": "module"
+}
